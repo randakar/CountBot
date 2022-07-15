@@ -26,5 +26,6 @@ target/
 
 .project
 .settings/
+.classpath/
 .factorypath/
 .idea/
