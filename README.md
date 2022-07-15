@@ -12,7 +12,7 @@
   - `controllers`
   - `data`
   - `models`
-- The project assumes `com.example.restservice.DemoApplication` is the Spring Boot Application. To change this, remove the `@SpringBootApplication` annotation from `DemoApplication` and add it to another application class.
+- The project assumes `nl.kraaknet.countbot.CountBot` is the Spring Boot Application. To change this, remove the `@SpringBootApplication` annotation from `DemoApplication` and add it to another application class.
 
 ### Running the app
 
