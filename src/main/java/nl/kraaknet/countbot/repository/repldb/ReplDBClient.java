@@ -18,7 +18,6 @@ import lombok.Builder;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import nl.kraaknet.countbot.repository.BackendException;
-import org.springframework.lang.Nullable;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -46,11 +45,9 @@ import static java.util.stream.Collectors.toUnmodifiableList;
 @Builder
 public class ReplDBClient {
 
-    public static final String REPLIT_DB_URL = "REPLIT_DB_URL";
-
     @NonNull
     @Builder.Default
-    private String url = System.getenv(REPLIT_DB_URL);
+    private String url = System.getenv("REPLIT_DB_URL");
 
     private final HttpClient httpClient = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2).build();
 
@@ -77,10 +74,9 @@ public class ReplDBClient {
         }
     }
 
-    private static URI getConnectUri(@Nullable final String url) {
-        final String uri = url == null ? System.getenv(REPLIT_DB_URL) : url;
+    private static URI getConnectUri(@NonNull final String url) {
         try {
-            return new URI(uri);
+            return new URI(url);
         } catch (final Exception e) {
             if (e.getMessage() != null)
                 log.error(e.getMessage());
