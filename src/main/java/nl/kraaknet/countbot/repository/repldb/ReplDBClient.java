@@ -18,6 +18,7 @@ import lombok.Builder;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import nl.kraaknet.countbot.repository.BackendException;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -43,6 +44,7 @@ import static java.util.stream.Collectors.toUnmodifiableList;
  */
 @Slf4j
 @Builder
+@Component
 public class ReplDBClient {
 
     @NonNull
