@@ -52,8 +52,6 @@ public class ReplDBClient {
     @Builder.Default
     private String url = System.getenv(REPLIT_DB_URL);
 
-    private final boolean encoded;
-
     private final HttpClient httpClient = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2).build();
 
     private final UnaryOperator<String> encoder = new UrlEncoderOperator();
